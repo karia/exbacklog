@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require "exbacklog"
+require "json"
+
+client = BacklogKit::Client.new(
+  space_id: '',
+  api_key: ''
+)
+
+client.get_projects(all: "true").body.each do |attr|
+  puts attr.projectKey + ","  + attr.name
+end
+
