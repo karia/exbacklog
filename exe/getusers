@@ -3,10 +3,7 @@
 require "exbacklog"
 require "json"
 
-client = BacklogKit::Client.new(
-  space_id: '',
-  api_key: ''
-)
+client = BacklogKit::Client.new
 
 client.get_users.body.each do |attr|
   puts attr.id.to_s + ","  + attr.name + ","+attr.mailAddress
